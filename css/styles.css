@@ -230,6 +230,10 @@ h2 {
 }
 
 .studio-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         background-color: #F4F4FD;
         border: 1px solid #8e8f99;
         border-radius: 4px;
@@ -244,10 +248,6 @@ h2 {
 .studio-benefit {
         margin-bottom: 8px;
         margin-top: 8px;
-}
-
-.studio-svg {
-        margin: 24px 100px;
 }
 
 .studio-list .studio-benefit {

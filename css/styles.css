@@ -61,6 +61,20 @@ ol {
         margin-right: 76px;
 }
 
+.visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+}
+
 .header-logo .logo-part-two {
         color: #2e2f42;
 }
@@ -170,7 +184,7 @@ ol {
         max-width: 496px;
 }
 
-.button {
+.main-button {
         background-color: #4d5ae5;
         font-weight: 500;
         font-size: 16px;
@@ -191,8 +205,8 @@ ol {
         height: 56px;
 }
 
-.button:hover,
-.button:focus {
+.main-button:hover,
+.main-button:focus {
         background-color: #404BBF;
 }
 
@@ -208,17 +222,6 @@ h2 {
 .studio-section {
         padding-top: 120px;
         padding-bottom: 120px;
-}
-
-.studio-main-title {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        border: 0;
-        padding: 0;
-
-        overflow: hidden;
 }
 
 .studio-list {
@@ -532,4 +535,150 @@ h2 {
         margin-bottom: 8px;
         margin-left: 8px;
         margin-right: 8px;
+}
+
+.footer-email-input-box {
+        margin-left: auto;
+}
+
+.subscribe-text {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+}
+
+.footer-form {
+        display: flex;
+        gap: 24px;
+}
+
+.footer-label {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+}
+
+.footer-email-input {
+        width: 264px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        background-color: transparent;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 2;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+
+        padding-left: 16px;
+}
+
+.footer-email-input::placeholder {
+        color: #ffffff;
+}
+
+.footer-subscribe-button {
+        min-width: 165px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+        cursor: pointer;
+        background-color: #4d5ae5;
+        border: none;
+        border-radius: 4px;
+}
+
+.footer-subscribe-button:hover,
+.footer-subscribe-button:focus {
+        background-color: #404BBF;
+}
+
+.footer-button-icon {
+        margin-left: 16px;
+        fill: #ffffff;
+}
+
+.backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(46, 47, 66, 0.4);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+}
+
+.modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 408px;
+        min-height: 584px;
+        border-radius: 4px;
+
+        transform: translate(-50%, -50%);
+
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fcfcfc;
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal {
+        transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modal-close-button {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        background-color: #E7E9FC;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.button-cross {
+        fill: #2E2F42;
+}
+
+.modal-close-button:hover {
+        cursor: pointer;
+        background-color: #404bbf;
+        border: none;
+}
+
+.modal-close-button:hover .button-cross {
+        fill: #FFFFFF;
 }
